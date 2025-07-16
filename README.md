@@ -110,25 +110,9 @@ Ce pipeline est contenu dans `rag_query.py` et fonctionne de manière indépenda
 
 ## 3. Visualisation des Pipelines
 
-### Pipeline d'Analyse (agent.py)
+### Pipeline d'Analyse (agent.py) et ### Pipeline de Dialogue (rag_query.py)
 
-Ce graphe illustre le processus de collecte, de validation et de génération de rapport pour une entreprise cible.
-
-```mermaid
-graph TD;
-    subgraph "Pipeline d'Analyse (agent.py)"
-        A[Input: Nom de l'entreprise] --> B(1. Planning Node);
-        B --> C(2. Research Node);
-        C --> D(3. Specialized Research Node);
-        D --> E{4. Judging Node};
-        E --> F(5. Report Node);
-        F --> G[Output: Fichiers .md et .csv];
-    end
-```
-
-### Pipeline de Dialogue (rag_query.py)
-
-Ce graphe montre comment le système RAG permet d'interroger les rapports déjà générés.
+Ces graphes illustrent le processus de collecte, de validation et de génération de rapport pour une entreprise cible, et montrent comment le système RAG permet d'interroger les rapports déjà générés.
 
 ```mermaid
 flowchart LR
