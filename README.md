@@ -99,3 +99,38 @@ Ce pipeline est contenu dans `rag_query.py` et fonctionne de manière indépenda
     ```
 3.  Le script créera la base de données vectorielle au premier lancement.
 4.  Posez vos questions directement dans le terminal. Tapez `exit` pour quitter.
+
+---
+
+## 3. Visualisation des Pipelines
+
+### Pipeline d'Analyse (agent.py)
+Ce graphe illustre le processus de collecte, de validation et de génération de rapport pour une entreprise cible.
+
+```mermaid
+graph TD;
+    subgraph "Pipeline d'Analyse (agent.py)"
+        A[Input: Nom de l'entreprise] --> B(1. Planning Node);
+        B --> C(2. Research Node);
+        C --> D(3. Specialized Research Node);
+        D --> E{4. Judging Node};
+        E --> F(5. Report Node);
+        F --> G[Output: Fichiers .md et .csv];
+    end
+```
+
+### Pipeline de Dialogue (rag_query.py)
+Ce graphe montre comment le système RAG permet d'interroger les rapports déjà générés.
+
+```mermaid
+graph TD;
+    subgraph "Pipeline de Dialogue (rag_query.py)"
+        A[Fichiers .md / .csv] --> B(Création de la DB Vectorielle);
+        C[Question de l'utilisateur] --> D{Recherche de similarité};
+        B --> D;
+        D --> E[Contexte pertinent];
+        C --> F(Prompt LLM);
+        E --> F;
+        F --> G[Réponse générée];
+    end
+```
