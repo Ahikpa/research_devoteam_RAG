@@ -78,7 +78,7 @@ Ce pipeline est contenu dans `rag_query.py` et fonctionne de manière indépenda
 - **Framework RAG :** LangChain.
 - **Base de Données Vectorielle :** FAISS.
 - **Embeddings :** `sentence-transformers/all-MiniLM-L6-v2` (modèle Hugging Face).
-- **LLM :** Google Gemini (`gemini-1.5-flash`).
+- **LLM :** Google Gemini (`gemini-2.5-flash`).
 
 ### Déroulement du Pipeline
 
